@@ -109,3 +109,19 @@ GO
 ALTER DATABASE [BookManagement] SET  READ_WRITE 
 GO
 
+INSERT INTO Role(name) VALUES('admin','user','guest')
+
+INSERT INTO UserInfo(email, password, firstName, lastName, enabled, avatar, role_id)
+VALUES	('thainguyen@gmail.com', '123456', 'Thai', 'Nguyen', 1, 'thai-nguyen-5648466661.jpg', 1),
+		('phiho@gmail.com', '123456', 'Phi', 'Ho', 1, 'phi-ho-4105315313.jpg', 2),
+		('dungpham@gmail.com', '123456', 'Dung', 'Pham', 1, 'dung-pham-5612032547.jpg', 2)
+  
+INSERT INTO Book(title, author, description, created_at, updated_at, image, enabled, user_id)
+VALUES	('Truyện Kiều', 'Nguyễn Du', 'Truyện Kiều là một tác phẩm nổi tiếng của đại thi hào Nguyễn Du', '2020-09-25', '2020-09-26', 'truyen-kieu-2461287941.jpg', 1, 1),
+		('Nam Quốc Sơn Hà', 'Lý Thường Kiệt', 'Bản Tuyên ngôn độc lập đầu tiên của Đại Việt', '2020-09-24', '2020-09-26', 'nam-quoc-son-ha-3621489657.jpg', 1, 2),
+		('Làm giàu', 'Jack Ma', 'Chia sẻ bí quyết thành đạt trong kinh doanh', '2020-09-23', '2020-09-27', 'lam-giau-4512587416.jpg', 1, 2)
+  
+INSERT INTO FavoriteBook(book_id, user_id, created_at)
+VALUES	(1, 1, '2020-09-26'),
+		(2, 1, '2020-09-26'),
+		(2, 2, '2020-09-26')
