@@ -109,6 +109,40 @@ GO
 ALTER DATABASE [BookManagement] SET  READ_WRITE 
 GO
 
+CREATE TABLE Role(
+	id int IDENTITY NOT NULL,
+	name varchar(250)
+);
+
+CREATE TABLE UserInfo(
+	id int IDENTITY NOT NULL,
+	email varchar(250) NOT NULL,
+	password varchar(250) NOT NULL,
+	firstName nvarchar(250),
+	lastName nvarchar(250),
+	enabled int NOT NULL,
+	avatar varchar(250),
+	role_id int NOT NULL
+);
+
+CREATE TABLE Book(
+	id int IDENTITY NOT NULL,
+	title nvarchar(250) NOT NULL,
+	author nvarchar(250) NOT NULL,
+	description nvarchar(250),
+	created_at date NOT NULL,
+	updated_at date NOT NULL,
+	image varchar(250),
+	enable int NOT NULL,
+	user_id int NOT NULL
+);
+
+CREATE TABLE UserInfo(
+	book_id int NOT NULL,
+	user_id int NOT NULL,
+	created_at date NOT NULL
+);
+
 INSERT INTO Role(name) VALUES('admin','user','guest')
 
 INSERT INTO UserInfo(email, password, firstName, lastName, enabled, avatar, role_id)
