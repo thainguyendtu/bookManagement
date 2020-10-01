@@ -133,7 +133,7 @@ CREATE TABLE Book(
 	created_at date NOT NULL,
 	updated_at date NOT NULL,
 	image varchar(250),
-	enable int NOT NULL,
+	enabled int NOT NULL,
 	user_id int NOT NULL
 );
 
