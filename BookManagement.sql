@@ -137,7 +137,7 @@ CREATE TABLE Book(
 	user_id int NOT NULL
 );
 
-CREATE TABLE UserInfo(
+CREATE TABLE FavoriteBook(
 	book_id int NOT NULL,
 	user_id int NOT NULL,
 	created_at date NOT NULL
